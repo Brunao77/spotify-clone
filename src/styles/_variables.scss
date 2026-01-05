@@ -1,0 +1,39 @@
+// --- PALETA DE COLORES ---
+
+// Marca
+$green-primary: #1ed760; // El verde icónico
+$green-hover: #1fdf64;   // Un poco más brillante para hovers
+
+// Fondos (Jerarquía de oscuridad)
+$bg-black: #000000;      // Fondo general
+$bg-base: #121212;       // Fondo del contenido principal / Sidebar
+$bg-elevated: #242424;   // Tarjetas y elementos flotantes base
+$bg-highlight: #2a2a2a;  // Hover en tarjetas o filas
+$bg-press: #000000b3;    // Efecto visual de click
+
+// Texto
+$text-base: #ffffff;      // Títulos y texto principal
+$text-subdued: #a7a7a7;   // Nombres de artistas, descripciones (gris claro)
+$text-negative: #f15e6c;  // Errores o acciones destructivas
+
+// --- TIPOGRAFÍA ---
+// Spotify usa "Circular", pero 'Figtree' o 'DM Sans' de Google Fonts son muy similares.
+$font-stack: 'Figtree', system-ui, -apple-system, sans-serif;
+
+$font-size-xs: 0.75rem;  // 12px (Detalles pequeños)
+$font-size-sm: 0.875rem; // 14px (Textos de canciones en listas)
+$font-size-md: 1rem;     // 16px (Texto base)
+$font-size-lg: 1.5rem;   // 24px (Títulos de sección)
+$font-size-xl: 2rem;     // 32px (Título principal de playlist)
+$font-size-mega: 4rem;   // ~64px (Título Hero)
+
+// --- ESPACIADO Y BORDES ---
+$radius-sm: 4px;         // Inputs
+$radius-md: 8px;         // Tarjetas de álbumes
+$radius-pill: 500px;     // Botones redondos (Play, Pills)
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;       // Padding estándar
+$spacing-lg: 24px;
+$spacing-xl: 32px;

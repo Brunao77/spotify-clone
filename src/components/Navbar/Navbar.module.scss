@@ -1,0 +1,106 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.nav{
+    background-color: $bg-black;
+    color: $text-base;
+    padding: 0.5rem 2rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text-subdued;
+
+    .logo{
+        color: $text-base;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .navItems{
+        @include flex-center;
+        gap: 0.5rem;
+
+        .homeIcon{
+            @include flex-center;
+            border-radius: 100%;
+            padding: 0.7rem;
+            &:hover{
+                color: $text-base;
+                cursor: pointer;
+                background-color: $bg-highlight;
+            }
+        }
+
+        .searchContainer{
+            @include flex-center;
+            gap: 0.5rem;
+            background-color: $bg-elevated;
+            padding: 0.25rem 0.5rem;
+            border-radius: $radius-pill;
+
+            &:hover{
+                color: $text-base;
+                cursor: pointer;
+                background-color: $bg-highlight;
+                outline: 1px solid gray;
+            }
+
+            .searchIcon{
+                @include flex-center;
+                border-radius: 100%;
+                padding: 0.5rem;
+                &:hover{
+                    color: $text-base;
+                    cursor: pointer;
+                    background-color: $bg-highlight;
+                }
+            }
+
+            input{
+                background: transparent;
+                border: none;
+                outline: none;
+                color: $text-base;
+                font-size: $font-size-md;
+                width: 20rem;
+                border-right: 1px solid $text-subdued;
+                &::placeholder{
+                    color: $text-subdued;
+                }
+            }
+        }
+    }
+
+    .navActions{
+        @include flex-center;
+        gap: 1rem;
+
+        .installApp{
+            @include flex-center;
+            gap: 0.5rem;
+            font-weight: bold;
+            font-size: small;
+
+            &:hover{
+                color: $text-base;
+                cursor: pointer;
+            }
+        }
+
+        .avatar{
+            @include flex-center;
+            background-color: goldenrod;
+            color: black;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+            font-weight: bold;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+    }
+    
+}

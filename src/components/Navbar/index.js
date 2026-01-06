@@ -5,7 +5,7 @@ import { GoHome, GoSearch, GoFileDirectory, GoDownload } from "react-icons/go";
 
 export default function Navbar() {
   return (
-    <nav className={styles.nav}>
+    <div className={styles.container}>
       <Link href="/" className={styles.logo}>
         <FaSpotify size={34} />
       </Link>
@@ -34,6 +34,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }

@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.card{
+    display: flex;
+    gap:1rem;
+    font-size: $font-size-sm;
+    align-items: center;
+
+    .cover{
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: $radius-sm;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .title{
+        @include text-truncate;
+        font-weight: 500;
+    }
+
+    .artists{
+        @include text-truncate;
+        color: $text-subdued;
+    }
+
+}

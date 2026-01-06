@@ -1,14 +1,15 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.nav{
+.container{
     background-color: $bg-black;
     color: $text-base;
-    padding: 0.5rem 2rem ;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: $text-subdued;
+    text-align: center;
 
     .logo{
         color: $text-base;
@@ -25,35 +26,38 @@
             @include flex-center;
             border-radius: 100%;
             padding: 0.7rem;
+            @include hover-pop();
+            
             &:hover{
-                color: $text-base;
-                cursor: pointer;
                 background-color: $bg-highlight;
             }
+
         }
 
         .searchContainer{
             @include flex-center;
-            gap: 0.5rem;
             background-color: $bg-elevated;
             padding: 0.25rem 0.5rem;
             border-radius: $radius-pill;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 0 0 transparent;
 
             &:hover{
                 color: $text-base;
                 cursor: pointer;
                 background-color: $bg-highlight;
-                outline: 1px solid gray;
+                box-shadow: 0 0 0 1px gray;
             }
 
             .searchIcon{
                 @include flex-center;
                 border-radius: 100%;
                 padding: 0.5rem;
+                transition: transform 0.2s ease-in-out;
                 &:hover{
                     color: $text-base;
                     cursor: pointer;
-                    background-color: $bg-highlight;
+                    transform: scale(1.05);
                 }
             }
 
@@ -63,7 +67,9 @@
                 outline: none;
                 color: $text-base;
                 font-size: $font-size-md;
-                width: 20rem;
+                font-weight: 500;
+                width: 25rem;
+                height: 100%;
                 border-right: 1px solid $text-subdued;
                 &::placeholder{
                     color: $text-subdued;
@@ -81,10 +87,13 @@
             gap: 0.5rem;
             font-weight: bold;
             font-size: small;
-
+            transition: transform 0.1s ease-in-out;
+            will-change: transform; 
+   
             &:hover{
                 color: $text-base;
                 cursor: pointer;
+                transform: scale(1.05);
             }
         }
 
@@ -104,3 +113,4 @@
     }
     
 }
+

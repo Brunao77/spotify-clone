@@ -1,0 +1,30 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.app{
+    display: grid;
+    grid-template-areas:
+      "navbar navbar"
+      "aside main"
+      "player player";
+    grid-template-columns: 0.33fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    position: relative;
+
+    nav{
+        grid-area: navbar;
+    }
+
+    aside{
+        grid-area: aside;
+    }
+
+    main{
+        grid-area: main;
+    }
+
+    footer{
+        grid-area: player;
+    }
+}

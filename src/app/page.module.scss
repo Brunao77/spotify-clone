@@ -1,0 +1,20 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.page{
+    background: linear-gradient(
+        to bottom,
+        $green-primary 0%,
+        rgba($green-primary, 0.1) 20%,
+        transparent 100%
+    );
+    height: 100%;
+    border-radius: $radius-sm;
+    padding: 1rem 2rem;
+
+    .playlists{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}

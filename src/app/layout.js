@@ -26,9 +26,9 @@ const geistMono = Geist_Mono({
 };
 
 export default function RootLayout({ children }) {
-  const [currentMusic, setCurrentMusic] = useState(null)
+  const [currentMusic, setCurrentMusic] = useState({ playlist: null, song: null, songs: [] })
   const [isPlaying, setIsPlaying] = useState(false)
-
+  const [volume, setVolume] = useState(1)
 
   return (
     <html lang="en">
@@ -38,7 +38,9 @@ export default function RootLayout({ children }) {
             currentMusic, 
             setCurrentMusic,
             isPlaying,
-            setIsPlaying
+            setIsPlaying,
+            volume,
+            setVolume
           }}
         >
           <div className={styles.app}>

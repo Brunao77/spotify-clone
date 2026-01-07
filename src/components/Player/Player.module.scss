@@ -5,4 +5,87 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 0.5rem;
+
+    .nowPlaying {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+        }
+        p {
+            margin: 0;
+            color: $text-base;
+            &:first-child {
+                font-weight: 500;
+            }
+            &:last-child {
+                color: $text-subdued;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .controls {
+        @include flex-center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .controlsButtonBar {
+            @include flex-center;
+            gap: 1rem;
+
+            .playPauseButton {
+                border-radius: 100%;
+                background-color: $text-base;
+                color: $bg-base;
+                @include flex-center;
+                padding: 0.25rem;
+                text-align: center;
+                
+                &:hover{
+                    background-color: #cccbcb;
+                    color: black;
+                }
+            }
+
+            button {
+                background: none;
+                border: none;
+                color: $text-subdued;
+                cursor: pointer;
+                @include hover-pop();
+            }
+        }
+
+        .slider {
+            width: 300px;
+            height: 4px;
+            background-color: $bg-elevated;
+            border-radius: 2px;
+        }
+    }
+
+    .volumeBar{
+        @include flex-center;
+        gap: 0.5rem;
+
+        .volumeIcon {
+            color: $text-subdued;
+            cursor: pointer;
+            @include hover-pop();
+            background-color: transparent;
+            border: none;
+        }
+
+        .volumeSlider {
+            width: 100px;
+            height: 4px;
+            background-color: $bg-elevated;
+            border-radius: 2px;
+        }
+    }
 }

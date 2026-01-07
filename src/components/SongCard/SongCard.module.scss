@@ -1,0 +1,81 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.trackRow{
+    height: 56px;
+    
+    &:hover {
+        background-color: $bg-elevated;
+        
+        .trackTitle { color: white; }
+        .trackArtist { color: white; }
+        .indexNum {
+            display: none;
+        }
+
+        .playIcon {
+            display: block;
+            color: $text-base;
+        }
+    }
+
+    .indexCol {
+        width: 40px; 
+        text-align: center;
+        color: $text-subdued;
+        vertical-align: middle;
+    }
+
+    .indexNum {
+        display: block;
+    }
+
+    .playIcon {
+        display: none;
+        margin: 0 auto; 
+    }
+    
+    td:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        text-align: center;
+        width: 40px;
+        color: $text-subdued;
+
+        
+    }
+   
+    td:last-child {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        text-align: right;
+        min-width: 50px;
+    }
+
+    .trackTitle{
+        @include text-truncate;
+        font-weight: 500;
+        color: $text-base;
+        width: fit-content;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .trackArtist{
+        @include text-truncate;
+        width: fit-content;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    td{
+        padding: 0 1rem;
+        vertical-align: middle;
+    }
+}

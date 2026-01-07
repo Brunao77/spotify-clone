@@ -20,10 +20,12 @@
     }
 
     .indexCol {
-        width: 40px; 
         text-align: center;
         color: $text-subdued;
         vertical-align: middle;
+        width: 40px; 
+        min-width: 40px; 
+        max-width: 40px;
     }
 
     .indexNum {

@@ -3,6 +3,7 @@ import { allPlaylists, songs } from "@/lib/data";
 import { GoClock } from "react-icons/go";
 import SongCard from "@/components/SongCard";
 import { IoPlay } from "react-icons/io5";
+import PlayPausePlaylistButton from "@/components/PlayPausePlaylistButton";
 
 export default async function PlaylistHome({ params }) {
 
@@ -27,9 +28,7 @@ export default async function PlaylistHome({ params }) {
 			</div>
 			<div className={styles.songList}>
 				<div className={styles.playButtonContainer}>
-					<button className={styles.playButton}>
-						<IoPlay size={20} />
-					</button>
+					<PlayPausePlaylistButton playlist={playlist} />
 				</div>
 				<table>
 					<thead>

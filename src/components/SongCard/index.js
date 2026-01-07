@@ -1,7 +1,7 @@
 'use client'
 import { useContext } from "react";
 import styles from "./SongCard.module.scss";
-import { IoPlay } from "react-icons/io5";
+import { IoPlay, IoPause } from "react-icons/io5";
 import { PlayerContext } from "@/app/layout";
 
 export default function SongCard({ song, index }) {
@@ -37,9 +37,8 @@ export default function SongCard({ song, index }) {
             <td className={styles.indexCol}>
                 <span className={styles.indexNum}>{index + 1}</span>
                 <span className={styles.playIcon}>
-                    <IoPlay size={10} />
+                    {isPlaying && currentMusic?.song?.id === song.id ? <IoPause size={15} /> : <IoPlay size={15} />}
                 </span>
-
             </td>
             <td>
                 <div>

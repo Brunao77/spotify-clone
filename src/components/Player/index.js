@@ -7,13 +7,17 @@ import { useContext, useEffect, useRef } from "react";
 import { PlayerContext } from "@/app/layout";
 import { GiNextButton, GiPreviousButton } from "react-icons/gi";
 import { Slider } from "@/components/Slider";
+import { useCurrentMusic } from "@/hooks/UseCurrentMusic";
+import { SliderSoundControl } from "../SliderSoundControl";
 
 export default function Player() {
     const audioRef = useRef(null);
     const context = useContext(PlayerContext);
-    const { currentMusic, setIsPlaying, isPlaying, volume, setVolume } = context;
+    const { currentMusic, setCurrentMusic, setIsPlaying, isPlaying, volume, setVolume } = context;
     const previousVolumeRef = useRef(volume)
+    const { getNextSong, getPreviousSong } = useCurrentMusic(currentMusic);
 
+   
     const isVolumeSilenced = volume < 0.1
 
     const handleClickVolumen = () => {
@@ -49,9 +53,23 @@ export default function Player() {
         .catch((e) => console.log('error playing: ', e))
     }
 
+    const onNextSong = () => {
+        const nextSong = getNextSong();
+        if (nextSong) {
+            setCurrentMusic({...currentMusic, song: nextSong});
+        }
+    }
+
+    const onPrevSong = () => {
+        const prevSong = getPreviousSong();
+        if (prevSong) {
+            setCurrentMusic({ ...currentMusic, song: prevSong });
+        }
+    }
+
     return (
         <div className={styles.playerContainer}>
-            <audio ref={audioRef} ></audio>
+            <audio ref={audioRef} onEnded={onNextSong}></audio>
             <div className={styles.nowPlaying}>
                 <img src={currentMusic.song?.image}></img>
                 <div>
@@ -61,19 +79,17 @@ export default function Player() {
             </div>
             <div className={styles.controls}>
                 <div className={styles.controlsButtonBar}>
-                    <button>
+                    <button onClick={onPrevSong}>
                         <GiPreviousButton size={25} />
                     </button>
                     <button onClick={() => setIsPlaying(!isPlaying)} className={styles.playPauseButton}>
                         {isPlaying ? <IoPause size={25} /> : <IoPlay size={25} />}
                     </button>
-                    <button>
+                    <button onClick={onNextSong}>
                         <GiNextButton size={25} />
                     </button>
                 </div>
-                <div className={styles.slider}>
-
-                </div>
+                <SliderSoundControl audio={audioRef} />
             </div>
             <div className={styles.volumeBar}>
                 <button className={styles.volumeIcon} onClick={handleClickVolumen}>

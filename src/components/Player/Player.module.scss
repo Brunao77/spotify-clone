@@ -2,8 +2,8 @@
 @import "../../styles/mixins";
 
 .playerContainer{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 1rem 0.5rem;
 
@@ -30,6 +30,7 @@
     }
 
     .controls {
+        align-self: center;
         @include flex-center;
         flex-direction: column;
         gap: 0.5rem;
@@ -70,6 +71,7 @@
     }
 
     .volumeBar{
+        justify-self: flex-end;
         @include flex-center;
         gap: 0.5rem;
 

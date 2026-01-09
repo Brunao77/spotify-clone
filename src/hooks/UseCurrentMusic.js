@@ -1,5 +1,3 @@
-
-
 export function useCurrentMusic(currentMusic) {
 
   const getCurrentSongIndex = () => {

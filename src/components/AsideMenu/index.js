@@ -23,7 +23,7 @@ export default function AsideMenu() {
                     <GoSearch size={20} />
                 </div>
                 <div className={styles.filterContainer}>
-                    <button className={styles.filter} onClick={()=> setShowFilterOptions(!showFilterOptions)}>
+                    <button data-testid="name-filter" className={styles.filter} onClick={()=> setShowFilterOptions(!showFilterOptions)}>
                         <span>{actviveFilter.name}</span>
                         <GoListUnordered size={20} />
                     </button>
@@ -32,7 +32,7 @@ export default function AsideMenu() {
                             <p>Ordenar por:</p>
                             {filters.map((filter) => (
                                 <li key={filter.name}>
-                                    <button className={filter.name === actviveFilter.name ? styles.active : ""}
+                                    <button data-testid={`btn-sort-${filter.name}`} className={filter.name === actviveFilter.name ? styles.active : ""}
                                         onClick={() => setActiveFilter(filter)}>
                                         <span >{filter.name}</span>
                                         {filter.name === actviveFilter.name && <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

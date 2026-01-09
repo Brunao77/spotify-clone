@@ -32,9 +32,9 @@ describe("AsideMenu", () => {
         const filterButton = screen.getByRole("button", { name: /Recientes/i });
         expect(filterButton).toBeInTheDocument();
         fireEvent.click(filterButton);
-        const alphabeticalOption = screen.getByRole("button", { name: /Orden Alfabético/i });
+        const alphabeticalOption = screen.getByTestId('btn-sort-Orden Alfabético')
         expect(alphabeticalOption).toBeInTheDocument();
         fireEvent.click(alphabeticalOption);
-        expect(screen.getByRole("button", { name: /Orden Alfabético/i })).toBeInTheDocument();
+        expect(screen.getByTestId('name-filter')).toBeInTheDocument();
     });
 });

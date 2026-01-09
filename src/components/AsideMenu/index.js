@@ -1,6 +1,5 @@
 'use client'
 
-import Link from "next/link";
 import styles from "./AsideMenu.module.scss";
 import { GoSearch, GoListUnordered } from "react-icons/go";
 import { useState } from "react";
